@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+<link rel="stylesheet" href="{% static 'accounts/css/bootstrap.min.css' %}">
+<script type="text/javascript" src="{% static 'accounts/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'accounts/js/jquery.min.js' %}"></script>
+<link rel="stylesheet" href="{% static 'accounts/css/header_footer.css' %}">
+
+
+<nav class=" custom_place navbar navbar-expand-md navbar-dark bg-dark"> 
+  <a class="navbar-brand ms-3 h3 mb-0" href="#">
+    TakeMYcode
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16">
+      <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+    </svg>
+  </a>
+  <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-expanded="false" aria-controls="navbarNav" aria-label="Toggle naigation" >
+    <!-- drop down menu button -->
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <!-- navbar elements -->
+      <li class="nav-item active">
+        <a href="{% url 'home_page' %}" class="nav-link fw-bold">
+          Home
+        </a>
+      </li>
+      <li class="nav-item active">
+        {% if request.user.is_authenticated %}
+        <!-- if user is authenticated response link account/username -->
+        <a href="{% url 'users_profiles' request.user.username %}" class="nav-link fw-bold">
+          Profile
+        </a>
+        {% endif %}
+      </li>
+      <li class="nav-item active">
+        <a href="{% url 'create_post' %}" class="nav-link fw-bold">
+          Add Poost
+        </a>
+      </li>
+    </ul>
+    {% if user.is_authenticated %}
+    <!-- if user is authenticated button logout else sign in, sign up  -->
+      <span class="ms-auto pe-3">
+          <a href="{% url 'logout' %}" class="pe-2">logout</a>
+          {% if user.socialaccount_set.all.0.get_avatar_url %}
+          <a href="{% url 'users_profiles' request.user.username %}"><img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" class="rounded-circle" width="50px" height="50px"></a>
+          {% else %}
+            <a href="{% url 'users_profiles' request.user.username %}"><img src="{{ request.user.user_avatar.url }}" class="rounded-circle" width="50px" height="50px"></a>
+          {% endif %}
+      </span>
+    {% else %}
+      <span class="ms-auto pe-3">
+        <a class="custom-link fw-bold me-4" href="{% url 'login' %}">sign in</a><a class="custom-link fw-bold" href="{% url 'registration' %}">sign up</a>
+      </span>  
+    {% endif %}  
+  </div>
+</nav>
+{% block content %}
+{% endblock %}
+</body>
+</html>

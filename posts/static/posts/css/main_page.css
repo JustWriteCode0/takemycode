@@ -1,0 +1,73 @@
+.delete-button {
+    margin-left: 90%;
+}
+
+.like-button {
+    background: #ff0000;
+    box-shadow: 0 0 3px 1px #535353;
+}
+
+
+.like-button:hover {
+    background: rgb(255, 115, 1);
+    transition: 1s linear;
+}
+
+.list_object {
+    background: #d4d4d4;
+    width: 600px;
+    box-shadow:0 0 3px 1px #535353;
+}
+
+@media (max-width: 1280px) {
+    .image_custom_size {
+        width: 500px;
+    }
+}
+
+
+@media (max-width: 912px) {
+    .image_custom_size {
+        width: 350px;
+    }
+    .list_object {
+        width: 400px;
+    }
+}
+
+@media (max-width: 645px) {
+    .image_custom_size {
+        width: 235px;
+}
+    .list_object {
+        width: 280px
+}        
+}
+
+@media (max-width: 575px) {
+    .image_custom_size {
+        width: 350px;
+    } 
+    .list_object {
+        width: 400px;
+    }
+}
+
+@media (max-width: 415px) {
+    .image_custom_size {
+        width: 250px;
+    } 
+    .list_object {
+        width: 300px;
+    }
+}
+
+@media (max-width: 315px) {
+    .image_custom_size {
+        width: 150px;
+    } 
+    .list_object {
+        width: 200px;
+    }
+}
+

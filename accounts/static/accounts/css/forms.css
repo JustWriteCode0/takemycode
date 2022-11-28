@@ -1,0 +1,150 @@
+body {
+    background: url('/static/accounts/images/Background.png');
+    background-size: 100% auto;
+}
+
+
+
+.input_name {
+    font-weight: bold;
+    color: #494949;
+    padding-left: 7px;
+}
+
+.form-style-6 { 
+    border-radius: 15px;
+	font: 95% Arial, Helvetica, sans-serif;
+	max-width: 400px;
+	margin: 200px auto;
+	padding: 16px;
+	background: #c4c4c4;
+    box-shadow: 0 0 10px 1px #494949;
+	
+}
+
+.form-style-6 a {
+    
+    text-decoration: none;
+}
+
+.form-style-6 h1{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+	background: #0044ff;
+	padding: 20px 0;
+	font-size: 140%;
+	font-weight: 300;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	margin: -16px -16px 16px -16px;
+	border-bottom:3px solid #0018a1;
+}
+
+.form-style-6 h1:hover  {
+    background: #0018a1;
+    
+}
+
+.form-style-6 input[type="text"],
+.form-style-6 input[type="date"],
+.form-style-6 input[type="email"],
+.form-style-6 input[type="password"],
+.form-style-6 input[type="url"],
+.form-style-6 input[type="file"],
+.form-style-6 textarea,
+.form-style-6 select 
+{
+	outline: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border-radius: 5px;
+	width: 100%;
+	background: #fff;
+	margin-bottom: 4%;
+	border: 1px solid #ccc;
+	padding: 3%;
+	color: #555;
+	font: 95% Arial, Helvetica, sans-serif;
+}
+.form-style-6 input[type="text"]:focus,
+.form-style-6 input[type="date"]:focus,
+.form-style-6 input[type="email"]:focus,
+.form-style-6 input[type="password"]:focus,
+.form-style-6 input[type="file"]:focus,
+.form-style-6 textarea:focus,
+.form-style-6 select:focus
+
+{
+	box-shadow: 0 0 5px #0018a1;
+	padding: 3%;
+	border: 1px solid #0018a1;
+}
+
+.form-style-6 input[type="submit"],
+.form-style-6 input[type="button"]{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    border-radius: 10px;
+	width: 100%;
+	padding: 3%;
+	background: #0044ff;
+	border-bottom: 2px solid #0018a1;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;	
+	color: #fff;
+}
+.form-style-6 input[type="submit"]:hover,
+.form-style-6 input[type="button"]:hover{
+	background: #0018a1;
+}
+
+.input_error ul li {
+    color: red;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+
+#id_user_avatar::-webkit-file-upload-button {
+	display: none;
+}
+
+#id_images::-webkit-file-upload-button {
+	display: none;
+}
+
+
+@media (max-width: 1280px) {
+    body {
+        background-size: 120% auto;
+    }
+}
+
+@media (max-width: 890px) {
+    body {
+        background-size: 260% auto;
+    }
+}
+
+@media (max-height: 800px) {
+    body {
+        background-size: 300% auto;
+    }
+	.form-style-6 {
+		max-width: 350px;
+		margin: 15px auto;
+	}
+}
+
+@media (max-width: 415px) {
+    body {
+        background-size: 420% auto; 
+    }
+	.form-style-6 {
+		max-width: 300px;
+		margin: 70px auto;
+	}
+}

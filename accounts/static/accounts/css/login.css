@@ -1,0 +1,38 @@
+
+.messages li {
+    list-style-type: none;
+}
+
+.success {
+	color: white;
+	background: rgb(64, 228, 85);
+    padding: 7px 0 7px 55px;
+    margin: 0 0 0 -50px;
+}
+
+
+.notification {
+	width: 100%;
+}
+
+#light{
+    position: relative;
+    top: 100%;
+}
+
+#lineh1{
+    position: absolute;
+    margin: 0 0 0 -30px;
+    height: 5px;
+    background: #ffffff;
+    animation: lineH 2s 0s;
+}
+
+@keyframes lineH{
+    0%{
+        width: 0%;
+    }
+    100%{
+width: 110%;
+}
+}

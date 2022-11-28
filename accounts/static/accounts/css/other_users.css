@@ -1,0 +1,25 @@
+body {
+    background: #0013b8;
+    background: linear-gradient(90deg, #00b8a0 19%, #9900ff 100%);
+}
+
+.user-info-list {
+    margin-top: 150px;
+}
+.user-info-list li {
+    border: none;
+    color: #272727;
+    font-weight: bold;
+    background: #0013b8;
+    background: linear-gradient(90deg, #00b8a0 19%, #9900ff 100%);
+}
+
+.button-add-friend {
+    font-weight: bold;
+    color: #cfcfcf;
+}
+
+.button-add-friend:hover {
+    font-weight: bold;
+    color: #ffffff;
+}

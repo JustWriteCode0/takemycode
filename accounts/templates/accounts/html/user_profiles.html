@@ -1,0 +1,36 @@
+{% extends 'accounts/html/header_footer.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'accounts/css/other_users.css' %}">
+<!-- Block with information about some user -->
+<div class="container-fluid">
+    <div class="row mb-5">
+        <div class="col-12 text-center">
+            <ul class="list-group user-info-list">
+                <li class="list-group-item">
+                    <img class="rounded-circle" src="{{ user.user_avatar.url }}" width="150px">
+                </li>
+                <li class="list-group-item">
+                    {{ user.username }}
+                </li>
+                <li class="list-group-item">
+                    {{ user.profile.first_name }}
+                </li>
+                <li class="list-group-item">
+                    {{ user.profile.last_name }}
+                </li>
+                <li class="list-group-item">
+                    {{ user.profile.bio }}
+                </li>
+                <li class="list-group-item">
+                    {{ user.profile.github }}
+                </li>
+                <li class="list-group-item">
+                    {{ user.join_date }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

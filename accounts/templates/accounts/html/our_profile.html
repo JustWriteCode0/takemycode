@@ -1,0 +1,76 @@
+{% extends 'accounts/html/header_footer.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'accounts/css/our_profile.css' %}">
+
+<div class="container-fluid">
+    <div class="row mb-5">
+        <div class="col-12 text-center">
+            <ul class="list-group user-info-list">
+                
+                <form method="POST">
+                    <!-- form fields about user -->
+                    {% csrf_token %}
+                    <label class="text-center">username</label>   
+                    <li class="list-group-item">
+                        {{ form.username }}
+                    </li>
+                    <label>first name</label>
+                    <li class="list-group-item">
+                        {{ form_profile.first_name }}
+                    </li>
+                    <label>last name</label>
+                    <li class="list-group-item">
+                        {{ form_profile.last_name }}
+                    </li>
+                    <label>describe</label>
+                    <li class="list-group-item">
+                        {{ form_profile.describe }}
+                    </li>
+                    <label>github link</label>
+                    <li class="list-group-item">
+                        {{ form_profile.github }}
+                    </li>
+                    <li class="list-group-item">
+                        <button class="btn bg-dark w-15 button-add-friend">Submit</button>
+                    </li>
+                </form>
+            </ul>
+            <h3 class="w-100 my-5 bg-dark">what does your profile look like</h3>
+            <ul class="list-group user-info-list">
+            <!-- block for users can see how them profile look like -->
+                {% if user.socialaccount_set.all.0.get_avatar_url %}
+                <!-- if user register or login with github get github avatar --> 
+                    <li class="list-group-item">
+                        <img class="rounded-circle" src="{{ user.socialaccount_set.all.0.get_avatar_url }}" width="150px" height="150">
+                    </li>
+                {% else %}    
+                    <li class="list-group-item">
+                        <img class="rounded-circle" src="{{ user.user_avatar.url }}" width="150px" height="150">
+                    </li>
+                {% endif %}    
+                <li class="list-group-item">
+                    {{ request.user.username }}
+                </li>
+                <li class="list-group-item">
+                    {{ request.user.profile.first_name }}
+                </li>
+                <li class="list-group-item">
+                    {{ request.user.profile.last_name }}
+                </li>
+                <li class="list-group-item">
+                    {{ request.user.profile.describe }}
+                </li>
+                <li class="list-group-item">
+                    {{ request.user.profile.github }}
+                </li>
+                <li class="list-group-item">
+                    {{ requser.join_date }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+ 
