@@ -1,7 +1,7 @@
 # takemycode
 This is simple social network where people can add posts, register or login with github, update profile and more 
 
-## For run this site you should 
+## How to run this project ?
 
 * pip install -r requirements.txt
 * python3 manage.py collectstatic
